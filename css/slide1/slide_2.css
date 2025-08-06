@@ -1,0 +1,146 @@
+/* Десктопная версия (по умолчанию) */
+.slide--2 {
+    height: 568px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.slide__content {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.slide__title {
+    font-size: 36px;
+    font-weight: 300;
+    color: #00B7EC;
+    margin-bottom: 20px;
+}
+
+.slide__subtitle {
+    font-size: 18px;
+    font-weight: normal;
+    color: #666666;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.slide__buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 565px;
+}
+
+.slide__button {
+    height: 50px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.slide__button--primary {
+    width: 225px;
+    background-color: #00B7EC;
+    color: #FFFFFF;
+}
+
+.slide__button--primary:hover {
+    background-color: #1998D5;
+}
+
+.slide__button--secondary {
+    width: 320px;
+    background-color: #FFFFFF;
+    color: #9BCC37;
+    border: 1px solid #00B7EC;
+}
+
+.slide__button--secondary:hover {
+    color: #1998D5;
+}
+
+.slide__image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 80%;
+}
+
+/* Планшетная версия (769px-1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .slide--2 {
+        height: auto;
+        min-height: 568px;
+    }
+
+    .slide__content {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .slide__subtitle {
+        max-width: 80%;
+        margin: 0 auto 30px;
+    }
+
+    .slide__buttons {
+        margin: 0 auto;
+    }
+
+    .slide__image {
+        position: relative;
+        transform: none;
+        margin-top: 30px;
+        max-width: 80%;
+    }
+}
+
+/* Мобильная версия (до 768px) */
+@media (max-width: 768px) {
+    .slide--2 {
+        height: auto;
+        padding: 20px;
+    }
+
+    .slide__content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .slide__title {
+        font-size: 28px;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    .slide__subtitle {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .slide__buttons {
+        flex-direction: column;
+        gap: 5px;
+        max-width: 100%;
+    }
+
+    .slide__button {
+        width: 295px !important;
+        margin: 0 auto;
+    }
+
+    .slide__image {
+        display: none;
+    }
+}

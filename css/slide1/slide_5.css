@@ -1,0 +1,147 @@
+.slide--5 {
+    background-color: #E9E9E9;
+    padding: 40px 0;
+}
+
+.slide__title {
+    font-size: 36px;
+    font-weight: 300;
+    color: #00B7EC;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.slide__carousel {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.slide__carousel-container {
+    overflow: hidden;
+}
+
+.slide__carousel-wrapper {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+}
+
+.slide__carousel-card {
+    width: 273px;
+    height: 412px;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #07A8DB 100%);
+    border: 5px solid #FFFFFF;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.slide__carousel-image {
+    width: 273px;
+    height: 156px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.slide__carousel-title {
+    font-size: 18px;
+    font-weight: normal;
+    color: #666666;
+    margin-bottom: auto;
+}
+
+.slide__carousel-button-link {
+    width: 224px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #00B7EC;
+    border-radius: 5px;
+    color: #00B7EC;
+    font-size: 18px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.slide__carousel-button-link:hover {
+    background-color: rgba(0, 183, 236, 0.1);
+}
+
+.slide__carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.slide__carousel-button--prev {
+    left: 0;
+}
+
+.slide__carousel-button--next {
+    right: 0;
+}
+
+.slide__carousel-button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .slide--5 {
+        padding: 20px 10px;
+    }
+
+    .slide__title {
+        font-size: 28px;
+        font-weight: normal;
+    }
+
+    .slide__carousel {
+        padding: 0 30px;
+    }
+
+    .slide__carousel-card {
+        width: 295px;
+        margin: 0 auto;
+    }
+
+    .slide__carousel-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .slide__carousel-button--prev {
+        left: 2px;
+    }
+
+    .slide__carousel-button--next {
+        right: 2px;
+    }
+}
+
+/* Планшетная версия */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .slide__carousel {
+        max-width: 90%;
+    }
+}

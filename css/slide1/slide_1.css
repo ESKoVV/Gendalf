@@ -1,0 +1,140 @@
+/* Десктопная версия (по умолчанию) */
+.slide--1 {
+    height: 568px;
+    background-image: url('../../img/slide_1/fon_1.svg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.slide__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #002F3D;
+    opacity: 0.77;
+}
+
+.slide__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1295px;
+    padding: 40px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.slide__title {
+    font-size: 64px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    max-width: 660px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.slide__subtitle {
+    font-size: 25px;
+    font-weight: normal;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    max-width: 660px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.slide__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 63px;
+    width: 565px;
+    margin: 0 auto;
+}
+
+.slide__button {
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.slide__button--primary {
+    width: 175px;
+    height: 50px;
+    background-color: #9BCC37;
+    color: #FFFFFF;
+    border: none;
+    font-weight: bold;
+}
+
+.slide__button--primary:hover {
+    background-color: #77BA04;
+}
+
+.slide__button--secondary {
+    width: 255px;
+    height: 40px;
+    background-color: #FFFFFF;
+    color: #00B7EC;
+    border: 1px solid #00B7EC;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: normal; /* Open Sans Regular */
+}
+
+.slide__button--secondary:hover {
+    color: #77BA04;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .slide--1 {
+        height: 388px;
+        background-image: url('../../img/mobile/fon_1.svg');
+    }
+
+    .slide__content {
+        padding-top: 20px;
+    }
+
+    .slide__title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .slide__subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+
+    .slide__buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .slide__button {
+        width: 295px !important;
+    }
+
+    .slide__button--secondary {
+        height: 50px; /* В мобильной версии делаем кнопки одинаковой высоты */
+    }
+}

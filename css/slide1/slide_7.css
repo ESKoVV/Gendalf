@@ -1,0 +1,136 @@
+.slide--7 {
+    min-height: 810px;
+    background: linear-gradient(to bottom, #46CD16 14%, #28E473 16%, #05B0D5 32%, #27DDD1 39%);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.slide__content {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slide__title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #14AFE8;
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.slide__faq {
+    flex: 1;
+    max-width: 800px;
+}
+
+.slide__faq-item {
+    margin-bottom: 20px;
+}
+
+.slide__faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 15px 10px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: normal;
+    color: #666666;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.slide__faq-question:hover {
+    color: #00B7EC;
+}
+
+.slide__faq-icon {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+    background-image: url('../../img/slide_7/active.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.slide__faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 33px;
+    font-size: 16px;
+    color: #666666;
+}
+
+.slide__faq-answer p {
+    margin-bottom: 15px;
+}
+
+.slide__faq-item.active .slide__faq-question {
+    color: #00B7EC;
+    text-decoration: none;
+}
+
+.slide__faq-item.active .slide__faq-icon {
+    background-image: url('../../img/slide_7/desactive.svg');
+}
+
+.slide__faq-item.active .slide__faq-answer {
+    max-height: 1000px;
+    padding: 15px 15px 15px 33px;
+}
+
+.slide__image {
+    width: 378px;
+    height: 320px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .slide--7 {
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .slide__content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .slide__title {
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+
+    .slide__faq {
+        max-width: 100%;
+    }
+
+    .slide__image {
+        display: none;
+    }
+}
+
+/* Планшетная версия */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .slide--7 {
+        min-height: auto;
+    }
+
+    .slide__content {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .slide__image {
+        margin: 30px auto;
+    }
+}

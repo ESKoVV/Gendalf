@@ -1,0 +1,131 @@
+.slide--4 {
+    height: 499px;
+    background: linear-gradient(to bottom, #46CD16 14%, #28E473 16%, #05B0D5 32%, #27DDD1 39%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.slide__content {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slide__title {
+    font-size: 36px;
+    font-weight: 300;
+    color: #00B7EC;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.slide__subtitle {
+    font-size: 18px;
+    font-weight: normal;
+    color: #666666;
+    max-width: 494px;
+    margin-bottom: 30px;
+}
+
+.slide__video-container {
+    width: 538px;
+    height: 297px;
+    position: relative;
+    background-color: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.slide__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide__video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    background: rgba(37, 217, 103, 0.95);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.slide__video-play:hover {
+    background: rgba(37, 217, 103, 1);
+}
+
+.slide__video-play-icon {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-left: 25px solid #FFFFFF;
+    border-bottom: 15px solid transparent;
+    margin-left: 5px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .slide--4 {
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .slide__content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .slide__title {
+        font-size: 28px;
+        font-weight: normal;
+    }
+
+    .slide__subtitle {
+        max-width: 100%;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .slide__video-container {
+        width: 354px;
+        height: 192px;
+        margin: 10px auto;
+    }
+}
+
+/* Планшетная версия */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .slide--4 {
+        height: auto;
+        min-height: 499px;
+    }
+
+    .slide__content {
+        width: 90%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .slide__subtitle {
+        max-width: 80%;
+        margin: 0 auto 30px;
+    }
+
+    .slide__video-container {
+        margin-top: 30px;
+    }
+}

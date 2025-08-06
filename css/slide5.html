@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #E9E9E9;
+            font-family: 'Open Sans Light', sans-serif;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            height: 566px;
+            margin: 0 auto;
+            position: relative;
+            background-color: #E9E9E9;
+        }
+        
+        .title {
+            color: #00B7EC;
+            font-size: 36px;
+            font-weight: 300;
+            margin-left: 0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .carousel-container {
+            width: 1300px;
+            height: 412px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .card {
+            width: 273px;
+            height: 412px;
+            flex-shrink: 0;
+            background-color: white;
+            margin-right: 30px;
+        }
+        
+        .card:last-child {
+            margin-right: 0;
+        }
+        
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-image: url('../img/slide_5/Vector_right.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            z-index: 10;
+        }
+        
+        .prev {
+            left: 0;
+            transform: translateY(-50%) scaleX(-1);
+        }
+        
+        .next {
+            right: 0;
+        }
+        
+        .cards-wrapper {
+            display: flex;
+            margin: 0 60px;
+            height: 100%;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .slide-container {
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            
+            .title {
+                text-align: center;
+                margin-left: 0;
+            }
+            
+            .carousel-container {
+                width: 100%;
+            }
+            
+            .card {
+                width: calc(100% - 40px);
+                margin-right: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="title">Живая лента</div>
+        <div class="carousel-container">
+            <button class="nav-button prev"></button>
+            <div class="cards-wrapper">
+                <div class="carousel">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+            </div>
+            <button class="nav-button next"></button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const cards = document.querySelectorAll('.card');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            
+            let currentPosition = 0;
+            const cardWidth = 273 + 30; // card width + margin
+            
+            function updateButtons() {
+                prevBtn.style.display = currentPosition === 0 ? 'none' : 'block';
+                nextBtn.style.display = currentPosition <= -(cards.length * cardWidth - carousel.offsetWidth) ? 'none' : 'block';
+            }
+            
+            prevBtn.addEventListener('click', function() {
+                if (currentPosition < 0) {
+                    currentPosition += cardWidth;
+                    carousel.style.transform = `translateX(${currentPosition}px)`;
+                    updateButtons();
+                }
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                if (currentPosition > -(cards.length * cardWidth - carousel.offsetWidth)) {
+                    currentPosition -= cardWidth;
+                    carousel.style.transform = `translateX(${currentPosition}px)`;
+                    updateButtons();
+                }
+            });
+            
+            // Calculate how many cards fit in the viewport initially
+            function calculateVisibleCards() {
+                const containerWidth = document.querySelector('.carousel-container').offsetWidth;
+                const cardTotalWidth = 273 + 30;
+                const visibleCards = Math.floor((containerWidth - 120) / cardTotalWidth); // 120px for buttons and margins
+                
+                // Adjust card width for mobile if needed
+                if (window.innerWidth <= 768) {
+                    cards.forEach(card => {
+                        card.style.width = 'calc(100% - 40px)';
+                    });
+                }
+            }
+            
+            calculateVisibleCards();
+            updateButtons();
+            
+            window.addEventListener('resize', function() {
+                calculateVisibleCards();
+                updateButtons();
+            });
+        });
+    </script>
+</body>
+</html>
