@@ -42,7 +42,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
+// Аккордеон в слайде 7
+    const faqItems = document.querySelectorAll('.slide__faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.slide__faq-question');
+        
+        question.addEventListener('click', function() {
+            // Закрываем все открытые элементы, кроме текущего
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Переключаем текущий элемент
+            item.classList.toggle('active');
+        });
+    });
 
 
 
@@ -148,4 +164,5 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.classList.toggle('active');
         });
     }
+
 });
