@@ -102,7 +102,7 @@ body {
 
 .header__mobile-icons {
     display: none; /* Скрываем в десктопной версии */
-    
+
 }
 
 .main {
@@ -123,7 +123,15 @@ body {
     .header__button {
         width: 200px;
     }
+    .header__menu-link{
+        font-size: 12px;
+
+    }
+    .header__button{
+        font-size: 12px;
+    }
 }
+
 
 /* Мобильная версия (до 768px) */
 @media (max-width: 768px) {
